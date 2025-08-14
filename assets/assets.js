@@ -83,11 +83,13 @@ export const workData = [
         title: 'Real-Estate App',
         description: 'Web Design',
         bgImage: '/real-estate.jpg',
+        link:'https://real-estate-web-c99d.vercel.app/'
     },
     {
         title: 'Weather  app',
         description: 'Web Design',
         bgImage: '/weather.jpg',
+        link:'https://utsavgm-weather-app-sd5x.vercel.app/'
     },
     {
         title: 'To-Do App ',
@@ -116,4 +118,5 @@ export const infoList = [
 
 export const toolsData = [
     assets.vscode, assets.Tableau, assets.PowerBi, assets.Next, assets.github , assets.Node
+
 ];
