@@ -36,8 +36,13 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import Node from './node.png'
+import Python from './python.png'
+import PostgreSQL from './postgre.png'
+import AI_icon from './ai-icon.png'
+
 
 export const assets = {
+    AI_icon,
     user_image,
     code_icon,
     code_icon_dark,
@@ -75,10 +80,34 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    Python,
+    PostgreSQL
 };
 
 export const workData = [
+    // --- NEW ENTERPRISE & FREELANCE PROJECTS ---
+    {
+        title: 'AI Tender Analysis Platform',
+        description: 'Agentic AI & RAG',
+        bgImage: './tender-analysis.png',
+        link: 'https://tender.aarviencon.com' // Replace with live link if available
+    },
+    {
+        title: 'SK Advizors Wealth Platform',
+        description: 'FinTech Web App',
+        bgImage: './sk-advizors.png',
+        link: 'https://skadvizors.com'
+    },
+    {
+        title: 'GTC IELTS/PTE Academy',
+        description: 'EdTech Platform',
+        bgImage: './gtc-academy.png',
+        link: 'https://gtctraining.in'
+    },
+   
+
+    // --- YOUR EXISTING PROJECTS (Untouched) ---
     {
         title: 'Real-Estate App',
         description: 'Web Design',
@@ -105,18 +134,47 @@ export const workData = [
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.data_icon, title: 'Data Analytics', description: 'Data analytics involves collecting, processing, and interpreting data to uncover insights that drive smarter business decisions....', link: '' },
-   
-   
+    { 
+        icon: assets.AI_icon, 
+        title: 'AI & Automation', 
+        description: 'Designing Agentic AI systems, RAG workflows, and NLP solutions to automate complex business processes and drastically reduce operational times.', 
+        link: '' 
+    },
+    { 
+        icon: assets.web_icon, // You can swap this with an assets.ui_icon or assets.code_icon if you have one!
+        title: 'Full-Stack Development', 
+        description: 'Engineering scalable, high-performance web applications and enterprise platforms using modern frameworks like React.js, Next.js, Node.js, and PostgreSQL.', 
+        link: '' 
+    },
+    { 
+        icon: assets.data_icon, 
+        title: 'Data Analytics & BI', 
+        description: 'Transforming raw databases into actionable strategic insights through advanced SQL analysis and dynamic, interactive Power BI dashboards.', 
+        link: '' 
+    },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js , Tableau , Power-Bi' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { 
+        icon: assets.code_icon, 
+        iconDark: assets.code_icon_dark, 
+        title: 'Tech Stack', 
+        description: 'React.js, Next.js, Flask, PostgreSQL, Agentic AI (RAG), Power BI' 
+    },
+    { 
+        icon: assets.edu_icon, 
+        iconDark: assets.edu_icon_dark, 
+        title: 'Education', 
+        description: 'B.Tech in Computer Science Engineering' 
+    },
+    { 
+        icon: assets.project_icon, 
+        iconDark: assets.project_icon_dark, 
+        title: 'Projects', 
+        description: 'Architected Enterprise AI & Full-Stack Platforms' 
+    }
 ];
 
 export const toolsData = [
-    assets.vscode, assets.Tableau, assets.PowerBi, assets.Next, assets.github , assets.Node
+    assets.vscode, assets.Tableau, assets.PowerBi, assets.Next, assets.github , assets.Node, assets.Python, assets.PostgreSQL
 ];

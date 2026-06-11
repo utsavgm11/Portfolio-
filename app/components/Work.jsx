@@ -1,18 +1,26 @@
+"use client"; // Added this because we are using React State (useState)
+
 import { assets, workData } from '@/assets/assets'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Work = ({isDarkMode}) => {
+  // State to track how many projects are currently visible. Defaults to 4.
+  const [visibleCount, setVisibleCount] = useState(4);
+
   return (
     <div id='work' className='w-full px-[12%] py-10 scroll-mt-20'>
          <h4 className='text-center mb-2 text-lg font-Ovo'>My Portfolio</h4>
         <h2 className='text-center text-5xl'>My Latest Work</h2>
+        
+        {/* Updated Intro Text to match your new skills */}
         <p className='text-center mb-12 mt-5 mx-auto max-w-2xl font-Ovo'>
-            Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in front-end development.
+            Welcome to my portfolio! Explore a collection of enterprise platforms, AI applications, and interactive web projects showcasing my expertise across the full stack.
         </p>
 
         <div className='grid grid-cols-auto my-10 gap-5 dark:text-black'>
-            {workData.map((project,index)=>(
+            {/* .slice() ensures we only map over the number of items currently set in state */}
+            {workData.slice(0, visibleCount).map((project,index)=>(
                 <div key={index} className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group' style={{backgroundImage:`url(${project.bgImage})`}}>
                    <a href={project.link} target="_blank" rel="noopener noreferrer">
                <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7'>
@@ -30,9 +38,15 @@ const Work = ({isDarkMode}) => {
                 
             ))}
         </div>
-        <a href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'>
-          Show More <Image src={isDarkMode ? assets.right_arrow_bold_dark  : assets.right_arrow_bold} alt='Right arrow' className='w-4'/>
-        </a>
+        
+        {/* Changed <a> to <button> and added the toggle logic */}
+        <button 
+          onClick={() => setVisibleCount(prev => prev === 4 ? workData.length : 4)}
+          className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'
+        >
+          {visibleCount === 4 ? 'Show More' : 'Show Less'} 
+          <Image src={isDarkMode ? assets.right_arrow_bold_dark  : assets.right_arrow_bold} alt='Right arrow' className='w-4'/>
+        </button>
     </div>
   )
 }

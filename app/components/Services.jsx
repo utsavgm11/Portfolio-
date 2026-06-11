@@ -8,10 +8,11 @@ const Services = (isDarkMode) => {
         <h4 className='text-center mb-2 text-lg font-Ovo'>What I Offer</h4>
         <h2 className='text-center text-5xl'>My Services</h2>
         <p className='text-center mb-12 mt-5 mx-auto max-w-2xl font-Ovo'>
-            I’m Utsav Ganesh Mahyawanshi, a passionate web developer and data analyst with expertise in creating responsive websites and interactive dashboards. I combine clean design with powerful data insights to help businesses present their brand effectively and make informed decisions.
+            I help businesses scale and optimize through intelligent technology. By combining Agentic AI automation, robust full-stack architecture, and data-driven insights, I build custom solutions that streamline complex workflows, enhance user experiences, and drive smarter strategic decisions.
         </p>
 
-        <div className='grid grid-cols-auto gap-6 my-10 '>
+        {/* Updated grid classes for perfect responsiveness */}
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10'>
             {serviceData.map(({icon,title,description , link}, index)=>(
                 <div key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white'>
                    <Image src={icon} alt= '' className='w-10'/>
@@ -22,7 +23,6 @@ const Services = (isDarkMode) => {
                    </a>
                 </div>
             ))}
-
         </div>
     </div>
   )
